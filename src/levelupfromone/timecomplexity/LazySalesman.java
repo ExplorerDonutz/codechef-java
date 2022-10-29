@@ -3,10 +3,9 @@ package levelupfromone.timecomplexity;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
 
-class DevuAndFriendshipTesting {
+class LazySalesman {
     public static void main(String[] args) {
         BufferedReader in = null;
         try {
@@ -14,18 +13,16 @@ class DevuAndFriendshipTesting {
             int t = Integer.parseInt(in.readLine());
 
             for (int i = 0; i < t; i++) {
-                int n = Integer.parseInt(in.readLine());
-                String[] d = in.readLine().split(" ");
+                String[] str = in.readLine().split(" ");
+                int n = Integer.parseInt(str[0]);
+                int w = Integer.parseInt(str[1]);
 
-                Set<String> set = new HashSet<>();
-                for (int j = 0; j < n; j++) {
-                    set.add(d[j]);
-                }
+                int[] a = Arrays.stream(in.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-                System.out.println(set.size());
+
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            return;
         } finally {
             assert in != null;
             try {
